@@ -14,6 +14,7 @@ public class HelloWorld {
     @GetMapping("/hello")
     public ResponseEntity<String> helloWorld(){
         log.info("***********************Hit");
+        log.info("***********************Another Change");
         return ResponseEntity.ok("Hello Java WOrld");
     }
 }
