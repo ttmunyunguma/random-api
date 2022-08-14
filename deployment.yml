@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: random-api
+  labels:
+    app: random-api
+    rel: stable
+spec:
+  containers:
+    - name: random-api
+      image: ttmunyunguma/random-api:0.0.1
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 8081
+      livenessProbe:
+        httpGet:
+          path: /api/hello
+          port: 8081
+        initialDelaySeconds: 15
+        timeoutSeconds: 2
+        periodSeconds: 5
+        failureThreshold: 1
