@@ -35,7 +35,11 @@ metadata:
 spec:
   selector:
     app: random-api
+  type: LoadBalancer
+
   ports:
     - port: 8081
       targetPort: 8081
+      nodePort: 31111
       protocol: TCP
+
